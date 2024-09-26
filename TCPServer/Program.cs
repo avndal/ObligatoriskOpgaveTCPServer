@@ -39,9 +39,10 @@ void HandleClient(TcpClient socket)
         Console.WriteLine(message);
         if (message == "Metoder")
         {
-            writer.WriteLine("Hello World\n Serverens metoder er\n 1. Add\n 2. Subtract\n 3. Random");
+            writer.WriteLine("Hello World\n Serverens metoder er\n 1. Add\n 2. Subtract\n 3. Random\n 4. Stop");
             writer.Flush();
         }
+        //Secret Method
         if (message == "Tak")
         {
             writer.WriteLine("Det var så lidt");
@@ -61,7 +62,6 @@ void HandleClient(TcpClient socket)
             string numbersInput = reader.ReadLine();
             Console.WriteLine(numbersInput);
 
-            // Parse the input numbers
             var numbers = numbersInput.Split(new[] { ' ', '<', '>' }, StringSplitOptions.RemoveEmptyEntries);
             if (numbers.Length == 2 && int.TryParse(numbers[0], out int num1) && int.TryParse(numbers[1], out int num2))
             {
@@ -83,7 +83,6 @@ void HandleClient(TcpClient socket)
             string numbersInput = reader.ReadLine();
             Console.WriteLine(numbersInput);
 
-            // Parse the input numbers
             var numbers = numbersInput.Split(new[] { ' ', '<', '>' }, StringSplitOptions.RemoveEmptyEntries);
             if (numbers.Length == 2 && int.TryParse(numbers[0], out int num1) && int.TryParse(numbers[1], out int num2))
             {
@@ -105,7 +104,6 @@ void HandleClient(TcpClient socket)
             string numbersInput = reader.ReadLine();
             Console.WriteLine(numbersInput);
 
-            // Parse the input numbers
             var numbers = numbersInput.Split(new[] { ' ', '<', '>' }, StringSplitOptions.RemoveEmptyEntries);
             if (numbers.Length == 2 && int.TryParse(numbers[0], out int num1) && int.TryParse(numbers[1], out int num2))
             {

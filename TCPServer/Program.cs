@@ -18,10 +18,6 @@ while (true)
     IPEndPoint iPEndPoint = socket.Client.RemoteEndPoint as IPEndPoint;
 
     Console.WriteLine("client connected");
-
-
-
-
     Task.Run(() => HandleClient(socket));
 }
 
@@ -48,7 +44,7 @@ void HandleClient(TcpClient socket)
             writer.WriteLine("Det var så lidt");
             writer.Flush();
         }
-        if (message == "stop")
+        if (message == "Stop")
         {
             writer.WriteLine("Goodbye World");
             writer.Flush();
@@ -122,6 +118,7 @@ void HandleClient(TcpClient socket)
                 writer.WriteLine("Invalid input. Please use the format <num1> <num2>");
                 writer.Flush();
             }
+            
         }
 
     }
